@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reason: MyText
+  teacher_experience: MyText
+  student_experience: MyText
+  updated_at: 2014-06-01 20:30:13
+  updated: false
+
+two:
+  reason: MyText
+  teacher_experience: MyText
+  student_experience: MyText
+  updated_at: 2014-06-01 20:30:13
+  updated: false

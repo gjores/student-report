@@ -1,0 +1,35 @@
+<h1>Listing reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reason</th>
+      <th>Teacher experience</th>
+      <th>Student experience</th>
+      <th>Updated at</th>
+      <th>Updated</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.reason %></td>
+        <td><%= report.teacher_experience %></td>
+        <td><%= report.student_experience %></td>
+        <td><%= report.updated_at %></td>
+        <td><%= report.updated %></td>
+        <td><%= link_to 'Show', report %></td>
+        <td><%= link_to 'Edit', edit_report_path(report) %></td>
+        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report', new_report_path %>
