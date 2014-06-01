@@ -1,50 +1,33 @@
-<%= form_for(@report) do |f| %>
-  <% if @report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
 
-      <ul>
-      <% @report.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :reason %><br>
-    <%= f.text_area :reason %>
-  </div>
-
-  <div class="field">
-    <%= f.label :updated_at %><br>
-    <%= f.datetime_select :updated_at %>
-  </div>
-  <div class="field">
-    <%= f.label :updated %><br>
-    <%= f.check_box :updated %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 <%= form_for @report, :html => {:class=> "grid-form"} do |f| %>
 
     <fieldset>
-        <legend>Pedagogisk utredning</legend>
-        <div data-row-span="2">
+        <legend>Pedagogisk utredning för</legend>
+        <div data-row-span="1">
             <div data-field-span="1">
-                <label><%= f.label :teacher_experience %></label>
+                <label><%= f.label :reason, "Anledning till utredning" %></label>
+                <%= f.text_area :reason %>
+            </div>
+          </div>
+        <div data-row-span="1">
+            <div data-field-span="1">
+                <label><%= f.label :teacher_experience, "Lärarens erfarenhet" %></label>
                 <%= f.text_area :teacher_experience %>
             </div>
+          </div>
+          
+          <div data-row-span="1">
             <div data-field-span="1">
-                <label><%= f.label :student_experience %></label>
+                <label><%= f.label :student_experience, "Elevens erfarenhet" %></label>
                 <%= f.text_area :student_experience %>
             </div>
+          </div>
         <div data-row-span="3">
             <div data-field-span="1">
-                <label><%= f.label :updated_at %></label>
+                <label><%= f.label :updated_at, "Utvärderingsdatum" %></label>
                <%= f.datetime_select :updated_at %>
+               <%= f.label :updated %><br>
+               <%= f.check_box :updated %>
             </div>
         </div>
     
