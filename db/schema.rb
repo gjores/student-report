@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601183013) do
+ActiveRecord::Schema.define(version: 20140606182515) do
 
   create_table "reports", force: true do |t|
     t.text     "reason"
     t.text     "teacher_experience"
     t.text     "student_experience"
-    t.datetime "updated_at"
+    t.date     "evaluation_date"
     t.boolean  "updated"
     t.datetime "created_at"
+    t.integer  "student_id"
   end
 
   create_table "students", force: true do |t|

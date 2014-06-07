@@ -1,35 +1,26 @@
 <h1>Listing reports</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Reason</th>
-      <th>Teacher experience</th>
-      <th>Student experience</th>
-      <th>Updated at</th>
-      <th>Updated</th>
-      <th></th>
-      <th></th>
+      <th>Förnamn</th>
+      <th>Efternamn</th>
+      <th>Personnummer</th>
+      <th>Antal utredningar</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @reports.each do |report| %>
+    <% @students.each do |student| %>
       <tr>
-        <td><%= report.reason %></td>
-        <td><%= report.teacher_experience %></td>
-        <td><%= report.student_experience %></td>
-        <td><%= report.updated_at %></td>
-        <td><%= report.updated %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.socialsecurity %></td>
+        <td><%= student.reports.count %></td>
+        <td><%= link_to "Skapa utredning", new_report_path(:student_id => student.id), :class => "btn btn-black btn-xs"%></td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Report', new_report_path %>
