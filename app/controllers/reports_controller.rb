@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @report = Report.find(params[:id])
- 
+ @student = Student.find(@report.student_id)
   end
 
   # GET /reports/new

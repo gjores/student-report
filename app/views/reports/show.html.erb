@@ -1,4 +1,6 @@
-Utvärdering för <% s = Student.find(@report.student_id) %><%= s.first_name%>
+Utvärdering för <%= @student.first_name%>
+
+
 
 <p id="notice"><%= notice %></p>
 
@@ -24,7 +26,10 @@ Utvärdering för <% s = Student.find(@report.student_id) %><%= s.first_name%>
 
 <p>
   <strong>Updated:</strong>
-  <%= @report.updated %>
+<% if @report.updated?%>
+  Utredningen är ännu inte utvärderad.
+  <%else%>
+  Utredningen är updaterad.
 </p>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |

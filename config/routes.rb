@@ -1,5 +1,7 @@
 Studentreport::Application.routes.draw do
+
   resources :reports
+  resources :students
 
   get "welcome/index"
   devise_for :users
