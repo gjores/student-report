@@ -1,8 +1,9 @@
 
 <%= form_for @report, :html => {:class=> "grid-form"} do |f| %>
-<%= f.hidden_field :student_id, :value => @student%>    
+<%= f.hidden_field :student_id, :value => @student.id%>    
+<%= f.hidden_field :user_id, :value => current_user.id%>
     <fieldset>
-        <legend>Pedagogisk utredning för</legend>
+        <legend>Pedagogisk utredning för <%= @student.first_name%> <%= @student.last_name%> </legend>
         <div data-row-span="1">
             <div data-field-span="1">
                 <label><%= f.label :reason, "Anledning till utredning" %></label>

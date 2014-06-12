@@ -12,13 +12,14 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @report = Report.find(params[:id])
- @student = Student.find(@report.student_id)
+    @student = Student.find(@report.student_id)
   end
 
   # GET /reports/new
   def new
     @report = Report.new
-    @student = params[:student_id]
+    @student = Student.find(params[:student_id])
+
   end
 
   # GET /reports/1/edit
@@ -73,6 +74,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:reason, :teacher_experience, :student_experience, :student_id, :evaluation_date, :updated)
+      params.require(:report).permit(:reason, :teacher_experience, :user_id, :student_experience, :student_id, :evaluation_date, :updated)
     end
 end

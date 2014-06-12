@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606182515) do
+ActiveRecord::Schema.define(version: 20140610060615) do
 
   create_table "reports", force: true do |t|
     t.text     "reason"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140606182515) do
     t.boolean  "updated"
     t.datetime "created_at"
     t.integer  "student_id"
+    t.integer  "user_id"
   end
 
   create_table "students", force: true do |t|
