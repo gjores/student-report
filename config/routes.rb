@@ -1,5 +1,6 @@
 Studentreport::Application.routes.draw do
 
+  resources :usersubjects
   resources :reports
   resources :students
 
