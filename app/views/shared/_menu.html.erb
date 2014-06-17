@@ -2,4 +2,16 @@
   <li class="<%= 'active' if params[:controller] =='welcome' %>"><a href="<%= root_path%>">Hem</a> </li>
    <li class="<%= 'active' if params[:controller] =='students' %>"><a href="<%= students_path %>">Elever</a> </li>
   <li class="<%= 'active' if params[:controller] =='reports' %>"><a href="<%= reports_path %>">Utredning</a> </li>
+  <li class="<%= 'active' if params[:controller] =='users' %>"><a href="<%= edit_user_registration_path %>">Profil</a> </li>
+  <% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+
+
 </ul>
