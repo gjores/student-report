@@ -1,4 +1,0 @@
-<%= form_tag new_usersubject_path do |f|%>
-	<%= f.collection_select_tag :subject_id, Subject.order(:name), :id, :name, {} %>
-	<%= f.submit%>
-<% end -%> 
