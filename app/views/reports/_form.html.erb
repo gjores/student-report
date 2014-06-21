@@ -4,6 +4,20 @@
 <%= f.hidden_field :user_id, :value => current_user.id%>
     <fieldset>
         <legend>Pedagogisk utredning för <%= @student.first_name%> <%= @student.last_name%> </legend>
+            <div data-row-span="3">
+            <div data-field-span="1">
+                <label><%= f.label :evaluation_date, "Utvärderingsdatum" %></label>
+               <%= f.text_field :evaluation_date, :id => "timepicker" %>
+            </div><div data-field-span="1">
+                <label><%= f.label :updated, "Utvärderad?" %></label>
+               <%= f.check_box :updated %>
+            </div>
+                        <div data-field-span="1">
+                <label><%= f.label :subject, "Ämne" %></label>
+                <%= f.collection_select :subject, current_user.subjects.order(:name), :name, :name, {:include_blank => 'Välj ämne'} %>
+             
+            </div>
+        </div>
         <div data-row-span="1">
             <div data-field-span="1">
                 <label><%= f.label :reason, "Anledning till utredning" %></label>
@@ -23,17 +37,7 @@
                 <%= f.text_area :student_experience %>
             </div>
           </div>
-        <div data-row-span="3">
-            <div data-field-span="1">
-                <label><%= f.label :evaluation_date, "Utvärderingsdatum" %></label>
-               <%= f.text_field :evaluation_date, :id => "timepicker" %>
-             
-            </div><div data-field-span="1">
-                <label><%= f.label :updated, "Utvärderad?" %></label>
-               <%= f.check_box :updated %>
-             
-            </div>
-        </div>
+    
     <%= f.submit %>
         </div>
     </fieldset>

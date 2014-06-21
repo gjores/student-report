@@ -1,3 +1,4 @@
+<% if user_signed_in?%>
 <ul id="nav"class="nav nav-pills">
   <li class="<%= 'active' if params[:controller] =='welcome' %>"><a href="<%= root_path%>">Hem</a> </li>
    <li class="<%= 'active' if params[:controller] =='students' %>"><a href="<%= students_path %>">Elever</a> </li>
@@ -15,3 +16,4 @@
 
 
 </ul>
+<% end -%>

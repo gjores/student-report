@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
     has_many :reports
     has_many :usersubjects
 	has_many :subjects, :through => :usersubjects
+attr_reader :subject_tokens
+def subject_tokens=(ids)
+	self.subject_ids = ids.split(",")
+	
+end
 end
