@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'ajax-datatables-rails'
 gem 'will_paginate'
+gem 'rolify'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
