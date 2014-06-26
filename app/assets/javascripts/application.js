@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require jquery.tokeninput
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap3
 //= require moment
 //= require bootstrap
 //= require bootstrap-datetimepicker

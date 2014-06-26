@@ -17,7 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-turbolinks'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-gem 'ajax-datatables-rails', '0.1.2'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'ajax-datatables-rails'
 gem 'will_paginate'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

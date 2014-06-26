@@ -1,15 +1,13 @@
 class StudentDatatable < AjaxDatatablesRails::Base
-  # uncomment the appropriate paginator module,
-  # depending on gems available in your project.
-  # include AjaxDatatablesRails::Extensions::Kaminari
+ 
   include AjaxDatatablesRails::Extensions::WillPaginate
-  # include AjaxDatatablesRails::Extensions::SimplePaginator
 
   def sortable_columns
     # list columns inside the Array in string dot notation.
     # Example: 'users.email'
     @sortable_columns ||= [
-      'student.first_name'
+      'students.first_name',
+      'students.last_name'
     ]
   end
 
@@ -17,7 +15,8 @@ class StudentDatatable < AjaxDatatablesRails::Base
     # list columns inside the Array in string dot notation.
     # Example: 'users.email'
     @searchable_columns ||= [
-      'student.first_name'
+      'students.first_name',
+      'students.last_name'
     ]
   end
 
@@ -26,7 +25,8 @@ class StudentDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       [
-        
+        record.first_name,
+        record.last_name
         # comma separated list of the values for each cell of a table row
         # example: record.attribute,
       ]
