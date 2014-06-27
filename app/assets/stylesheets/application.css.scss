@@ -12,6 +12,6 @@
  *= require bootstrap-datetimepicker
  *= require token-input-bootstrappy
  *= require dataTables/jquery.dataTables.bootstrap3
- *= require_tree .
  */
-@import "bootstrap"
+@import "bootstrap";
+@import "custom";
