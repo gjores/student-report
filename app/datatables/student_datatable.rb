@@ -7,7 +7,8 @@ class StudentDatatable < AjaxDatatablesRails::Base
     # Example: 'users.email'
     @sortable_columns ||= [
       'students.first_name',
-      'students.last_name'
+      'students.last_name',
+      'students.group'
     ]
   end
 
@@ -16,7 +17,8 @@ class StudentDatatable < AjaxDatatablesRails::Base
     # Example: 'users.email'
     @searchable_columns ||= [
       'students.first_name',
-      'students.last_name'
+      'students.last_name',
+      'students.group'
     ]
   end
 
@@ -26,7 +28,9 @@ class StudentDatatable < AjaxDatatablesRails::Base
     records.map do |record|
       [
         record.first_name,
-        record.last_name
+        record.last_name,
+        record.group
+
         # comma separated list of the values for each cell of a table row
         # example: record.attribute,
       ]
