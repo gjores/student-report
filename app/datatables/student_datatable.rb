@@ -1,6 +1,8 @@
 class StudentDatatable < AjaxDatatablesRails::Base
  
   include AjaxDatatablesRails::Extensions::WillPaginate
+    def_delegator :@view, :link_to
+
 
   def sortable_columns
     # list columns inside the Array in string dot notation.
@@ -23,13 +25,13 @@ class StudentDatatable < AjaxDatatablesRails::Base
   end
 
   private
-
   def data
     records.map do |record|
       [
-        record.first_name,
+        link_to(record.first_name, @view.student_path(:id => record)),
         record.last_name,
-        record.group
+        link_to(record.group, @view.group_path(record))
+        
 
         # comma separated list of the values for each cell of a table row
         # example: record.attribute,
