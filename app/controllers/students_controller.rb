@@ -8,5 +8,6 @@ before_action :authenticate_user!
   end
 
   def show
+  	@student = Student.find(params[:id])
   end
 end

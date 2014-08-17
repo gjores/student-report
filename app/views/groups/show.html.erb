@@ -1,0 +1,17 @@
+<h1><%=@group%></h1>
+<table class="table table-condensed table-hover">
+	<thead>
+		<th>Namn</th>
+		<th>Antal utredningar</th>
+		
+
+	</thead>
+	<tbody>
+		<% @students.each do |s|%>
+			<tr <% if s.reports.count > 3 %> class="danger" <% end -%> >
+				<td><%= link_to s.first_name, student_path(s)%> <%= link_to s.last_name, student_path(s)%></td>
+				<td><%= s.reports.count%></td>
+			</tr>
+		<% end -%>
+</tbody>
+</table>

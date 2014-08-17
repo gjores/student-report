@@ -29,8 +29,8 @@ class StudentDatatable < AjaxDatatablesRails::Base
     records.map do |record|
       [
         link_to(record.first_name, @view.student_path(:id => record)),
-        record.last_name,
-        link_to(record.group, @view.group_path(record))
+        link_to(record.last_name, @view.student_path(:id => record)),
+        link_to(record.group, @view.group_path(:id => record.group))
         
 
         # comma separated list of the values for each cell of a table row
